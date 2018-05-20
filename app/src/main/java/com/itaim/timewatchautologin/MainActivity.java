@@ -10,9 +10,6 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    String STRcomp;
-    String STRid;
-    String STRpass;
     EditText GETcomp;
     EditText GETid;
     EditText GETpass;
@@ -46,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
     public void enter(View v)
     {
 
-        STRcomp = GETcomp.getText().toString();
-        STRid = GETid.getText().toString();
-        STRpass = GETpass.getText().toString();
+        String STRcomp = GETcomp.getText().toString();
+        String STRid = GETid.getText().toString();
+        String STRpass = GETpass.getText().toString();
 
         if(Gsave.isChecked()){
             SharedPreferences.Editor editor = getSharedPreferences("save data", MODE_PRIVATE).edit();
@@ -67,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void exit(View v)
     {
+        String STRcomp = GETcomp.getText().toString();
+        String STRid = GETid.getText().toString();
+        String STRpass = GETpass.getText().toString();
+
         if(Gsave.isChecked()) {
             SharedPreferences.Editor editor = getSharedPreferences("save data", MODE_PRIVATE).edit();
             editor.putString("comp", STRcomp);
